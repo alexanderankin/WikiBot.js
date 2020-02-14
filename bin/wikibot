@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+/**
+ * 
+ */
+
+var { main } = require('../lib/cli');
+
+if (require.main === module) {
+  main(process.argv).then(() => {});
+}
+
+module.exports = main;

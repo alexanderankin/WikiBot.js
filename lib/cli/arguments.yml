@@ -1,0 +1,51 @@
+- long: --dir <directory>
+  description:
+    Read the bot's configuration data from 'directory' instead of default
+
+- long: --lang <code>
+  description:
+    Use <code> language to work with wiki instead of default
+
+- long: --family <family>
+  description:
+    Set the family of the wiki you want to work on, e.g.
+    wikipedia, wiktionary, wikitravel, ...
+    This will override the configuration in user-config.py.
+    
+- long: --user <xyz>
+  description:
+    Log in as user 'xyz' instead of the default username.
+
+- long: --daemonize <xyz>
+  description:
+    Immediately return control to the terminal and redirect
+    stdout and stderr to file xyz.
+    (only use for bots that require no input from stdin).
+
+- long: --log <log>
+  description:
+    Enable the log file, using the default filename '%s-bot-Ymds-SSSS.log'.
+    This will use the name of the subcommand you used, unless argument <log>
+    is provided. Logs will be stored in the logs subdirectory if writable,
+    else cwd.
+
+- long: --nolog
+  description: Disable the log file (if it is enabled by default).
+
+- long: --maxlag <interval>
+  description:
+    Sets a new maxlag parameter to a number of seconds. Defer bot
+    edits during periods of database server lag. Default is set
+    by config.js (format defined in agenda/human-interval)
+
+- long: --putthrottle <n>
+  short: --pt
+  description: 
+    Set the minimum time (in seconds) the bot will wait between
+    saving pages.
+
+- long: --simulate
+  description:
+    Disables writing to the server. Useful for testing and
+    debugging of new code (if given, doesn't do any real
+    changes, but only shows what would have been changed).
