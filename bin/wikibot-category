@@ -1,21 +1,13 @@
 #!/usr/bin/env node
-var commander = require('commander');
 
-async function category(argv = process.argv) {
-  var program = new commander.Command();
-  program.name('wikibot-category');
+/**
+ * 
+ */
 
-  if (argv.length === 2) {
-    program.outputHelp();
-    process.exit(0);
-  }
-
-  program.parse(argv);
-}
-
+var { main } = require('../lib/cli/commands/category');
 
 if (require.main === module) {
-  category(process.argv).then(() => {});
+  main(process.argv).then(() => {});
 }
 
-module.exports = category;
+module.exports = main;
